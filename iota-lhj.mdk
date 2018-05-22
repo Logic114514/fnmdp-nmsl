@@ -1,0 +1,48 @@
+Title         : Combinators and LHJ System
+Author        : IdentifierH
+Logo          : True
+
+Package: bussproofs
+
+[TITLE]
+
+# Hilbert Style Proof System
+
+There exists a lot of proof systems to describe the concept of provability, different proof systems
+contain different axioms and rules. Here we study the Hilbert style proof system of the intuitionistic
+propositional logic, or so-called "LHJ" system. This system describes a kind of computability
+via the correspondence between itself and the combinatory logic. Why intuitionistic?
+Because it is well known that any Turing complete formal system is equivalent to the
+intuitionistic propositional calculus.
+
+The LHJ system contains one rule and two axioms:
+
+* the Modus Ponens rule (or implication elimination)
+~ Snippet
+\begin{prooftree}
+\AxiomC{$\varphi\to\psi \quad \varphi$}
+\RightLabel{MP}
+\UnaryInfC{$\psi$}
+\end{prooftree}
+~
+* $(\varphi\to(\psi\to\chi))\to((\varphi\to\psi)\to(\varphi\to\chi))$
+* $\varphi\to(\psi\to\varphi)$
+
+
+~ Comment
+
+~ Math
+  (((\varphi\to(\psi\to\chi))\to((\varphi\to\psi)\to(\varphi\to\chi)))\to((\phi\to(\xi\to\phi))\to\eta))\to\eta
+~
+
+~ Comment
+
+$$
+\begin{aligned}
+\alpha &:= (\varphi\to(\psi\to\chi))\to((\varphi\to\psi)\to(\varphi\to\chi))\\
+\beta  &:= \varphi\to(\psi\to\varphi)\\
+\gamma &:= (\alpha\to(\beta\to\eta))\to\eta
+\end{aligned}
+$$
+
+~
